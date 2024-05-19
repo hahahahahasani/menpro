@@ -12,7 +12,7 @@
 <body>
     <header>
         <!-- Navbar -->
-        <nav class="container py-4 flex mx-auto mt-8 justify-evenly items-center fixed top-0 bg-white-grey shadow-lg">
+        <nav class="w-full py-4 flex mx-auto justify-evenly items-center fixed top-0 bg-white-grey shadow-md">
 
             <!-- Logo -->
             <div class="title text-green-700 font-extrabold text-xl">WOWOW</div>
@@ -110,7 +110,7 @@
                 <!-- Jurusan -->
                 <div class="jurusan">
                     <h2 class="text-slate-700 font-bold text-lg mb-3">Jurusan</h2>
-                    <div class="relative" onclick="dropdown1()">
+                    <div class="" onclick="dropdown1()">
                         <div class="inline-flex items-center overflow-hidden rounded-md border bg-white">
                             <a href="#"
                                 class="px-8 py-3 text-sm/normal text-gray-600 hover:bg-gray-50 hover:text-gray-700">
@@ -158,7 +158,7 @@
                 <!-- Profesi -->
                 <div class="profesi">
                     <h2 class="text-slate-700 font-bold text-lg mb-3">Profesi</h2>
-                    <div class="relative" onclick="dropdown2()">
+                    <div class="" onclick="dropdown2()">
                         <div class="inline-flex items-center overflow-hidden rounded-md border bg-white">
                             <a href="#"
                                 class="px-8 py-3 text-sm/normal text-gray-600 hover:bg-gray-50 hover:text-gray-700">

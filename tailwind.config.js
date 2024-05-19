@@ -9,7 +9,7 @@ export default {
     extend: {
       colors: {
         'white-bone': '#FCFCFC',
-        'white-grey' : 'FAFAFA',
+        'white-grey' : '#FAFAFA',
       }
     },
   },
