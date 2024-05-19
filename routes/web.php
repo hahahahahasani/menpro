@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+
+
+Route::get('mhs-calon', [PageController::class, 'pageMhsCalon'])->name('pageMhsCalon');
+Route::get('mhs-aktif', [PageController::class, 'pageMhsAktif'])->name('pageMhsAktif');
+Route::get('mhs-lulus', [PageController::class, 'pageMhsLulus'])->name('pageMhsLulus');
+Route::get('mhs-asing', [PageController::class, 'pageMhsAsing'])->name('pageMhsAsing');
+Route::get('mhs-tugas-akhir', [PageController::class, 'pageMhsTgsAkhir'])->name('pageMhsTgsAkhir');
+
+Route::get('dosen', [PageController::class, 'pageDosen'])->name('pageDosen');
+Route::get('tendik', [PageController::class, 'pageTendik'])->name('pageTendik');
+Route::get('akreditasi', [PageController::class, 'pageAkre'])->name('pageAkre');
