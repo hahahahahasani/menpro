@@ -31,7 +31,7 @@
                         <img src="{{ asset('img/arrow-down-s-line.svg') }}" alt="icon" class="w-3 ml-1 mt-1">
                     </button>
                     <div
-                        class="absolute opacity-0 pointer-events-none bg-grey-200 rounded-xl w-72 mt-2 p-5 z-10 bg-white outline outline-1 outline-slate-100 shadow transition-all duration-500 ease-in-out transform translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-1 delay-550 group-hover:block focus:">
+                        class="absolute opacity-0 pointer-events-none bg-grey-200 rounded-xl w-72 mt-2 p-5 z-10 bg-white-bone outline outline-1 outline-slate-100 shadow transition-all duration-500 ease-in-out transform translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-1 delay-550 group-hover:block focus:">
                         <a href="{{ route('pageMhsCalon') }}" class="block">
                             <span class="text-slate-500 font-bold text-base">Calon Mahasiswa</span>
                             <span class="block text-xs font-medium text-gray-500 mb-3">Memuat S1, Diploma, dll</span>

@@ -20,8 +20,8 @@
         <section>
             <div class="container flex mx-auto px-6 mt-12 flex-wrap gap-8 justify-center mb-20">
                 <div class="rounded-lg shadow-md w-2/5 h-[620px] px-6 py-4 bg-white-bone overflow-auto">
-                    <div class="overflow-auto w-full text-center">
-                        <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
+                    <div class="overflow-auto w-full">
+                        <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm text-center">
                             <thead class="ltr:text-left rtl:text-right">
                                 <tr>
                                     <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">Tahun

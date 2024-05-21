@@ -3,7 +3,7 @@
     <main>
         <!-- Title -->
         <section>
-            <div class="container mx-auto mt-20 text-center">
+            <div class="container mx-auto mt-28 text-center">
                 <div class="title">
                     <h1 class="text-5xl font-extrabold text-slate-800">Data Dosen</h1>
                 </div>
@@ -19,8 +19,8 @@
         <!-- Tables -->
         <section>
             <div class="container flex mx-auto mt-12 bg-white-bone px-12 py-6 rounded-lg shadow-md w-4/5 gap-20">
-                <div class="overflow-x-auto w-full text-center">
-                    <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
+                <div class="overflow-x-auto w-full">
+                    <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm text-center">
                         <thead class="ltr:text-left rtl:text-right">
                             <tr>
                                 <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">Tahun</th>

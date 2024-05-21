@@ -3,7 +3,7 @@
     <main>
         <!-- Title -->
         <section>
-            <div class="container mx-auto mt-20 text-center">
+            <div class="container mx-auto mt-28 text-center">
                 <div class="title">
                     <h1 class="text-5xl font-extrabold text-slate-800">Data Mahasiswa Aktif</h1>
                 </div>
