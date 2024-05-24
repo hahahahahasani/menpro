@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class PageController extends Controller
 {
@@ -43,6 +44,8 @@ class PageController extends Controller
     
     public function pageAkre()
     {
-        return view('akreditasi');
+        $response = Http::get('https://bolainsight.my.id/api/akreditasi');
+        $akreditasi = $response->json()['data'];
+        return view('akreditasi', compact('akreditasi'));
     }
 }

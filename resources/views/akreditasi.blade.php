@@ -45,46 +45,16 @@
                             </thead>
 
                             <tbody class="divide-y divide-gray-200">
-                                <tr class="odd:bg-white-bone">
-                                    <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Unggul</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">12</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">10</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">3</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">1</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">26</td>
-                                </tr>
-                                <tr class="odd:bg-white-bone">
-                                    <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">A</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">12</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">10</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">3</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">1</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">26</td>
-                                </tr>
-                                <tr class="odd:bg-white-bone">
-                                    <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">B</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">12</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">10</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">3</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">1</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">26</td>
-                                </tr>
-                                <tr class="odd:bg-white-bone">
-                                    <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Baik Sekali</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">12</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">10</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">3</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">1</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">26</td>
-                                </tr>
-                                <tr class="odd:bg-white-bone">
-                                    <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Baik</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">12</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">10</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">3</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">1</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">26</td>
-                                </tr>
+                                @foreach ($akreditasi as $row)
+                                    <tr>
+                                        <td>{{ $row['akreditasi'] }}</td>
+                                        <td>{{ $row['akreditasi'] }}</td>
+                                        <td>{{ $row['akreditasi'] }}</td>
+                                        <td>{{ $row['akreditasi'] }}</td>
+                                        <td>{{ $row['akreditasi'] }}</td>
+                                        <td>{{ $row['total'] }}</td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
