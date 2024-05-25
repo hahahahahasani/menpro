@@ -26,5 +26,11 @@ Route::get('mhs-asing', [PageController::class, 'pageMhsAsing'])->name('pageMhsA
 Route::get('mhs-tugas-akhir', [PageController::class, 'pageMhsTgsAkhir'])->name('pageMhsTgsAkhir');
 
 Route::get('dosen', [PageController::class, 'pageDosen'])->name('pageDosen');
+Route::get('dosen-homebase', [PageController::class, 'pageDosenHomebase'])->name('pageDosenHomebase');
+Route::get('dosen-jabatan-akademik', [PageController::class, 'pageDosenJabatanaka'])->name('pageDosenJabatanaka');
+Route::get('dosen-pendidikan-akhir', [PageController::class, 'pageDosenPakhir'])->name('pageDosenPakhir');
+Route::get('dosen-status-sertifikasi', [PageController::class, 'pageDosenStatus'])->name('pageDosenStatus');
+Route::get('dosen-tidak-tetap', [PageController::class, 'pageDosenTetap'])->name('pageDosenTetap');
+
 Route::get('tendik', [PageController::class, 'pageTendik'])->name('pageTendik');
 Route::get('akreditasi', [PageController::class, 'pageAkre'])->name('pageAkre');

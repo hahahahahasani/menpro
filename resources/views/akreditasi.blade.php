@@ -31,30 +31,41 @@
                                 <tr>
                                     <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">Predikat
                                     </th>
-                                    <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">S1
-                                    </th>
-                                    <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">S2
-                                    </th>
-                                    <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">S3
-                                    </th>
-                                    <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">Profesi
-                                    </th>
+                                    @foreach ($jenjang as $row)
+                                        <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">
+                                            {{ $row['jenjang'] }}
+                                        </th>
+                                    @endforeach
                                     <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">Jumlah
                                     </th>
                                 </tr>
                             </thead>
 
                             <tbody class="divide-y divide-gray-200">
-                                @foreach ($akreditasi as $row)
-                                    <tr>
-                                        <td>{{ $row['akreditasi'] }}</td>
-                                        <td>{{ $row['akreditasi'] }}</td>
-                                        <td>{{ $row['akreditasi'] }}</td>
-                                        <td>{{ $row['akreditasi'] }}</td>
-                                        <td>{{ $row['akreditasi'] }}</td>
-                                        <td>{{ $row['total'] }}</td>
-                                    </tr>
+                                @foreach ($jenjang as $row)
+                                    {{ $row['akreditasi'] }}
+                                    @foreach ($row as $halo)
+                                        <tr>
+                                            <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                                                {{-- {{ $halo['A'] }} --}}
+                                                a
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 @endforeach
+                                <tr>
+                                    <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">
+                                        Jumlah
+                                    </th>
+                                    @foreach ($jenjang as $row)
+                                        <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">
+                                            {{ $row['jumlah'] }}
+                                        </th>
+                                    @endforeach
+                                    <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">
+                                        {{ $sum }}
+                                    </th>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
