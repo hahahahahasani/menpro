@@ -102,6 +102,13 @@ class PageController extends Controller
     {
         $response = Http::get('https://bolainsight.my.id/api/akreditasi');
         $jenjang = $response->json()['data'];
+        // foreach ($jenjang as $row) {
+        //     // echo $row;
+        //     var_dump($row);
+        //     $try = $row['akreditasi'];
+        // }
+        // dd($row);
+        // var_dump($try);
         // $akreditasi = $response->json()['data']['akreditasi'];
 
         $sum = $response->json()['total_data'];

@@ -29,13 +29,19 @@
                         <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm text-center">
                             <thead class="">
                                 <tr>
-                                    <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">Predikat
+                                    <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">Jenjang
                                     </th>
-                                    @foreach ($jenjang as $row)
-                                        <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">
-                                            {{ $row['jenjang'] }}
-                                        </th>
-                                    @endforeach
+                                    <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">Unggul
+                                    </th>
+                                    <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">A
+                                    </th>
+                                    <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">B
+                                    </th>
+                                    <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">Baik
+                                        Sekali
+                                    </th>
+                                    <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">Baik
+                                    </th>
                                     <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">Jumlah
                                     </th>
                                 </tr>
@@ -43,25 +49,49 @@
 
                             <tbody class="divide-y divide-gray-200">
                                 @foreach ($jenjang as $row)
-                                    {{ $row['akreditasi'] }}
-                                    @foreach ($row as $halo)
-                                        <tr>
-                                            <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                                                {{-- {{ $halo['A'] }} --}}
-                                                a
-                                            </td>
-                                        </tr>
-                                    @endforeach
+                                    <tr>
+                                        <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                                            {{ $row['jenjang'] }}
+                                        </td>
+                                        <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                                            {{ $row['akreditasi']['Unggul'] }}
+                                        </td>
+                                        <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                                            {{ $row['akreditasi']['A'] }}
+                                        </td>
+                                        <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                                            {{ $row['akreditasi']['B'] }}
+                                        </td>
+                                        <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                                            {{ $row['akreditasi']['Baik Sekali'] }}
+                                        </td>
+                                        <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                                            {{ $row['akreditasi']['Baik'] }}
+                                        </td>
+                                        <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                                            {{ $row['jumlah'] }}
+                                        </td>
+                                    </tr>
                                 @endforeach
                                 <tr>
                                     <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">
                                         Jumlah
                                     </th>
-                                    @foreach ($jenjang as $row)
-                                        <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">
-                                            {{ $row['jumlah'] }}
-                                        </th>
-                                    @endforeach
+                                    <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">
+                                        {{ $unggul }}
+                                    </th>
+                                    <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">
+                                        {{ $a }}
+                                    </th>
+                                    <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">
+                                        {{ $b }}
+                                    </th>
+                                    <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">
+                                        {{ $bs }}
+                                    </th>
+                                    <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">
+                                        {{ $bk }}
+                                    </th>
                                     <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">
                                         {{ $sum }}
                                     </th>
