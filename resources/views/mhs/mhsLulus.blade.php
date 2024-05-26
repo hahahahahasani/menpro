@@ -18,112 +18,50 @@
 
         <!-- Combo Box -->
         <section>
-            <div class="container flex mx-auto mt-8 bg-white-bone px-12 py-6 rounded-lg shadow-md w-4/6 gap-20">
-
-                <!-- Profesi -->
-                <div class="profesi">
-                    <h2 class="text-slate-700 font-bold text-lg mb-3">Jenjang</h2>
-                    <div class="relative" onclick="dropdown2()">
-                        <div class="inline-flex items-center overflow-hidden rounded-md border bg-white">
-                            <a href="#"
-                                class="px-8 py-3 text-sm/normal text-gray-600 hover:bg-gray-50 hover:text-gray-700">
-                                Input Jenjang
-                            </a>
-
-                            <button class="h-full py-2 px-4 text-gray-600 hover:bg-gray-50 hover:text-gray-700">
-                                <span class="sr-only">Menu</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20"
-                                    fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </button>
-                        </div>
-
-                        <div class="absolute z-10 mt-2 w-56 rounded-md border border-gray-100 bg-white shadow-lg hidden"
-                            id="drop-down2">
-                            <div class="p-2">
-                                <a href="#"
-                                    class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700">
-                                    S1
-                                </a>
-
-                                <a href="#"
-                                    class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700">
-                                    S2
-                                </a>
-
-                                <a href="#"
-                                    class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700">
-                                    S3
-                                </a>
-
-                                <a href="#"
-                                    class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700">
-                                    PG
-                                </a>
-                            </div>
+            <form action="">
+                <div class="container flex mx-auto mt-8 bg-white-bone px-12 py-6 rounded-lg shadow-md w-4/6 gap-20">
+                    <!-- Jenjang -->
+                    <div class="lg:block lg:w-[21%]">
+                        <h1 class="text-lg font-semibold text-slate-900 mb-4">Input Jenjang</h1>
+                        <div class="mb-4">
+                            <label for="asuransi" class="block mb-2 text-sm font-medium text-gray-500"></label>
+                            <select id="jenjang" name="jenjang"
+                                class="bg-transparent border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-300 focus:border-gray-300 block w-1/2 p-2.5 lg:w-full">
+                                <option selected>--Input Jenjang--</option>
+                                <option value="1">S1</option>
+                                <option value="2">S2</option>
+                                <option value="3">S3</option>
+                                <option value="4">PG</option>
+                            </select>
                         </div>
                     </div>
-                </div>
 
-                <!-- Jurusan -->
-                <div class="jurusan">
-                    <h2 class="text-slate-700 font-bold text-lg mb-3">Jurusan</h2>
-                    <div class="relative" onclick="dropdown1()">
-                        <div class="inline-flex items-center overflow-hidden rounded-md border bg-white">
-                            <a href="#"
-                                class="px-8 py-3 text-sm/normal text-gray-600 hover:bg-gray-50 hover:text-gray-700">
-                                Input Jurusan
-                            </a>
-
-                            <button class="h-full py-2 px-4 text-gray-600 hover:bg-gray-50 hover:text-gray-700">
-                                <span class="sr-only">Menu</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20"
-                                    fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </button>
-                        </div>
-
-                        <div class="absolute z-10 mt-2 w-56 rounded-md border border-gray-100 bg-white shadow-lg hidden"
-                            id="drop-down1">
-                            <div class="p-2">
-                                <a href="#"
-                                    class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700">
-                                    Teknik Informatika
-                                </a>
-
-                                <a href="#"
-                                    class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700">
-                                    Matematika
-                                </a>
-
-                                <a href="#"
-                                    class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700">
-                                    Kimia
-                                </a>
-
-                                <a href="#"
-                                    class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700">
-                                    Biologikal
-                                </a>
-                            </div>
+                    <!-- Jurusan -->
+                    <div class="lg:block lg:w-[21%]">
+                        <h1 class="text-lg font-semibold text-slate-900 mb-4">Prodi</h1>
+                        <div class="mb-4">
+                            <label for="asuransi" class="block mb-2 text-sm font-medium text-gray-500"></label>
+                            <select id="prodi" name="prodi"
+                                class="bg-transparent border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-300 focus:border-gray-300 block w-1/2 p-2.5 lg:w-full">
+                                <option selected>--Prodi--</option>
+                                <option value="1">S1</option>
+                                <option value="2">S2</option>
+                                <option value="3">S3</option>
+                                <option value="4">PG</option>
+                            </select>
                         </div>
                     </div>
-                </div>
 
-                <!-- Button Submit -->
-                <div class="submit-jurusan mt-9 self-center">
-                    <button
-                        class="bg-green-800 px-12 py-3 rounded-lg hover:bg-green-700 hover:transition-all hover:duration-300 hover:shadow-md">
-                        <h2 class="text-white-bone font-bold text-sm">GOGOGO</h2>
-                    </button>
+                    <!-- Button Submit -->
+                    <div class="submit-jurusan mt-9 self-center">
+                        <button
+                            class="bg-green-800 px-12 py-3 rounded-lg hover:bg-green-700 hover:transition-all hover:duration-300 hover:shadow-md"
+                            type="submit">
+                            <h2 class="text-white-bone font-bold text-sm">GOGOGO</h2>
+                        </button>
+                    </div>
                 </div>
-            </div>
+            </form>
         </section>
 
         <!-- Tables -->
