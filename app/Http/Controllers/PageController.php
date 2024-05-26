@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\Http;
 
 class PageController extends Controller
 {
+    public function index()
+    {
+        return view('index');
+    }
     public function pageMhsCalon()
     {
         return view('mhs.mhsCalon');
@@ -95,7 +99,10 @@ class PageController extends Controller
 
     public function pageTendik()
     {
-        return view('sdm.tendik');
+        $response = Http::get('https://bolainsight.my.id/api/tendik');
+        $data = $response->json()['data'];
+        $sum = $response->json()['total_data'];
+        return view('sdm.tendik', compact('data', 'sum'));
     }
 
     public function pageAkre()

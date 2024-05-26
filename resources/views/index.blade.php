@@ -5,19 +5,20 @@
         <section>
             <div class="container mx-auto mt-28 text-center">
                 <div class="title">
-                    <h1 class="text-5xl font-extrabold text-slate-800">Data Kelulusan Mahasiswa</h1>
+                    <h1 class="text-5xl font-extrabold text-slate-800">Visualisasi Data Akreditasi</h1>
                 </div>
                 <div class="description mx-auto mt-3 w-2/3 text-center">
                     <h1 class="text-base text-slate-500">Lorem ipsum dolor sit amet consectetur
                         adipisicing
                         elit. Non voluptas numquam aperiam eum fugit adipisci inventore quae, perspiciatis nulla
-                        nostrum.</h1>
+                        nostrum.
+                    </h1>
                 </div>
             </div>
         </section>
 
         <!-- Combo Box -->
-        <section>
+        {{-- <section>
             <div class="container flex mx-auto mt-8 bg-white-bone px-12 py-6 rounded-lg shadow-md w-4/6 gap-20">
                 <!-- Jurusan -->
                 <div class="jurusan">
@@ -123,70 +124,52 @@
                     </button>
                 </div>
             </div>
-        </section>
+        </section> --}}
 
         <!-- Tables -->
         <section>
-            <div class="container flex mx-auto mt-12 bg-white-bone px-12 py-6 rounded-lg shadow-md w-4/5 gap-20">
-                <div class="overflow-x-auto w-full text-center">
-                    <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
-                        <thead class="ltr:text-left rtl:text-right">
-                            <tr>
-                                <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">Tahun
-                                </th>
-                                <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">Daya
-                                    Tampung</th>
-                                <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">Pendaftar
-                                </th>
-                                <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">Lulus
-                                    Seleksi</th>
-                            </tr>
-                        </thead>
-
-                        <tbody class="divide-y divide-gray-200">
-                            <tr class="odd:bg-white-bone">
-                                <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">TS-4 (2018)</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">3019</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">Web Developer</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">120</td>
-                            </tr>
-
-                            <tr class="odd:bg-white-bone">
-                                <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">TS-4 (2018)</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">3019</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">Web Designer</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">100</td>
-                            </tr>
-
-                            <tr class="odd:bg-white-bone">
-                                <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">TS-4 (2018)</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">3019</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">Singer</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">20</td>
-                            </tr>
-
-                            <tr class="odd:bg-white-bone">
-                                <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">TS-4 (2018)</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">3019</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">Singer</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">20</td>
-                            </tr>
-
-                            <tr class="odd:bg-white-bone">
-                                <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">TS-4 (2018)</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">3019</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">Singer</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">20</td>
-                            </tr>
-
-                            <tr class="odd:bg-white-bone">
-                                <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">TS-4 (2018)</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">3019</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">Singer</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">20</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <div class="container flex mx-auto mt-12 px-12 py-6 rounded-lg w-full gap-20">
+                <div class="flex gap-4">
+                    <div
+                        class="block justify-center text-center w-4/12 p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                        <img src="{{ asset('img/chart.svg') }}" alt="" class="mx-auto">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                            Data Calon Mahasiswa
+                        </h5>
+                        <p class="font-normal text-gray-700 dark:text-gray-400">
+                            Daya Tampung, Pendaftar, dan Lulus Seleksi
+                        </p>
+                    </div>
+                    <div
+                        class="block justify-center text-center w-4/12 p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                        <img src="{{ asset('img/monitor.svg') }}" alt="" class="mx-auto">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                            Data Mahasiswa
+                        </h5>
+                        <p class="font-normal text-gray-700 dark:text-gray-400">
+                            Mahasiswa Baru, Mahasiswa Aktif, Mahasiswa Tugas Akhir, dan Mahasiswa Asing
+                        </p>
+                    </div>
+                    <div
+                        class="block justify-center text-center w-4/12 p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                        <img src="{{ asset('img/folder.svg') }}" alt="" class="mx-auto">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                            Data Lulusan
+                        </h5>
+                        <p class="font-normal text-gray-700 dark:text-gray-400">
+                            Mahasiswa Lulusan, Rasio Kelulusan Tepat Waktu dan Keberhasilan Studi
+                        </p>
+                    </div>
+                    <div
+                        class="block justify-center text-center w-4/12 p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                        <img src="{{ asset('img/persond.svg') }}" alt="" class="mx-auto">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                            Sumber Daya Manusia
+                        </h5>
+                        <p class="font-normal text-gray-700 dark:text-gray-400">
+                            Dosen dan Tenaga Kependidikan
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -222,7 +205,7 @@
         </section>
     </main>
 
-    
+
     <!-- Javascript -->
     <script>
         function dropdown1() {

@@ -3,7 +3,7 @@
     <main>
         <!-- Title -->
         <section>
-            <div class="container mx-auto mt-20 text-center">
+            <div class="container mx-auto mt-28 text-center">
                 <div class="title">
                     <h1 class="text-5xl font-extrabold text-slate-800">Data Tenaga Didik</h1>
                 </div>
@@ -24,72 +24,33 @@
                         <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm text-center">
                             <thead class="ltr:text-left rtl:text-right">
                                 <tr>
-                                    <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">Tahun
+                                    <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">
+                                        Jenis Jabatan
                                     </th>
-                                    <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">Daya
-                                        Tampung</th>
+                                    <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">
+                                        Jumlah Tendik
+                                    </th>
                                 </tr>
                             </thead>
 
                             <tbody class="divide-y divide-gray-200">
-                                <tr class="odd:bg-white-bone">
-                                    <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">TS-4 (2018)</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">04/11/1980</td>
-                                </tr>
-
-                                <tr class="odd:bg-white-bone">
-                                    <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">TS-4 (2018)</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">24/05/1995</td>
-                                </tr>
-
-                                <tr class="odd:bg-white-bone">
-                                    <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">TS-4 (2018)</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">24/05/1995</td>
-                                </tr>
-
-                                <tr class="odd:bg-white-bone">
-                                    <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">TS-4 (2018)</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">24/05/1995</td>
-                                </tr>
-                                <tr class="odd:bg-white-bone">
-                                    <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">TS-4 (2018)</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">24/05/1995</td>
-                                </tr>
-                                <tr class="odd:bg-white-bone">
-                                    <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">TS-4 (2018)</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">24/05/1995</td>
-                                </tr>
-                                <tr class="odd:bg-white-bone">
-                                    <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">TS-4 (2018)</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">24/05/1995</td>
-                                </tr>
-                                <tr class="odd:bg-white-bone">
-                                    <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">TS-4 (2018)</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">24/05/1995</td>
-                                </tr>
-                                <tr class="odd:bg-white-bone">
-                                    <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">TS-4 (2018)</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">24/05/1995</td>
-                                </tr>
-                                <tr class="odd:bg-white-bone">
-                                    <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">TS-4 (2018)</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">24/05/1995</td>
-                                </tr>
-                                <tr class="odd:bg-white-bone">
-                                    <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">TS-4 (2018)</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">24/05/1995</td>
-                                </tr>
-                                <tr class="odd:bg-white-bone">
-                                    <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">TS-4 (2018)</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">24/05/1995</td>
-                                </tr>
-                                <tr class="odd:bg-white-bone">
-                                    <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">TS-4 (2018)</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">24/05/1995</td>
-                                </tr>
-                                <tr class="odd:bg-white-bone">
-                                    <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">TS-4 (2018)</td>
-                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">24/05/1995</td>
+                                @foreach ($data as $row)
+                                    <tr>
+                                        <td class="whitespace-nowrap font-medium px-4 py-2 text-gray-700">
+                                            {{ $row['jabatan_tendik'] }}
+                                        </td>
+                                        <td class="whitespace-nowrap font-medium px-4 py-2 text-gray-700">
+                                            {{ $row['jumlah'] }}
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                <tr>
+                                    <td class="whitespace-nowrap font-semibold text-base px-4 py-2 text-gray-700">
+                                        Jumlah
+                                    </td>
+                                    <td class="whitespace-nowrap font-semibold text-base px-4 py-2 text-gray-700">
+                                        {{ $sum }}
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>

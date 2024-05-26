@@ -16,7 +16,7 @@
         <nav
             class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <a href="{{ route('index') }}" class="flex items-center space-x-3 rtl:space-x-reverse">
                     {{-- <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo"> --}}
                     <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">UIN Satu</span>
                 </a>
@@ -40,13 +40,13 @@
                     <ul
                         class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                         <li>
-                            <a href="#"
+                            <a href="{{ route('index') }}"
                                 class="block py-2 px-3  rounded md:bg-transparent md:p-0 md:dark:text-blue-500"
                                 aria-current="page">Beranda</a>
                         </li>
                         <li>
                             <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbarMhs"
-                                class="flex items-center justify-between w-full py-2 px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
+                                class="flex items-center justify-between w-full py-2 px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-900 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
                                 Mahasiswa
                                 <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     fill="none" viewBox="0 0 10 6">
@@ -76,17 +76,17 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('pageMhsLulus') }}"
+                                        <a href="{{ route('pageMhsAsing') }}"
                                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-                                            <span class="text-slate-500 font-bold text-base">Mahasiswa Lulus</span>
+                                            <span class="text-slate-500 font-bold text-base">Mahasiswa Asing</span>
                                             <span class="block text-xs font-medium text-gray-500">Memuat S1, Diploma,
                                                 dll</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('pageMhsAsing') }}"
+                                        <a href="{{ route('pageMhsLulus') }}"
                                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-                                            <span class="text-slate-500 font-bold text-base">Mahasiswa Asing</span>
+                                            <span class="text-slate-500 font-bold text-base">Mahasiswa Lulus</span>
                                             <span class="block text-xs font-medium text-gray-500">Memuat S1, Diploma,
                                                 dll</span>
                                         </a>
@@ -105,7 +105,7 @@
                         </li>
                         <li>
                             <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbarSdm"
-                                class="flex items-center justify-between w-full py-2 px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
+                                class="flex items-center justify-between w-full py-2 px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-900 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
                                 SDM
                                 <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     fill="none" viewBox="0 0 10 6">
@@ -167,7 +167,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a href="#"
+                                        <a href="{{route('pageTendik')}}"
                                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
                                             Tendik
                                         </a>
@@ -177,7 +177,7 @@
                         </li>
                         <li>
                             <a href="{{ route('pageAkre') }}"
-                                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-gray-900 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
                                 Akreditasi
                             </a>
                         </li>

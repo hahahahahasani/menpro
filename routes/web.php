@@ -19,6 +19,8 @@ Route::get('/', function () {
 });
 
 
+Route::get('index', [PageController::class, 'index'])->name('index');
+
 Route::get('mhs-calon', [PageController::class, 'pageMhsCalon'])->name('pageMhsCalon');
 Route::get('mhs-aktif', [PageController::class, 'pageMhsAktif'])->name('pageMhsAktif');
 Route::get('mhs-lulus', [PageController::class, 'pageMhsLulus'])->name('pageMhsLulus');
