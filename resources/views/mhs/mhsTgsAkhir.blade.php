@@ -18,7 +18,8 @@
 
         <!-- Combo Box -->
         <section>
-            <form action="">
+            <form action="{{ route('getMhsTgsAkhir') }}" method="POST">
+                @csrf
                 <div class="container flex mx-auto mt-8 bg-white-bone px-12 py-6 rounded-lg shadow-md w-4/6 gap-20">
                     <!-- Jenjang -->
                     <div class="lg:block lg:w-[21%]">
@@ -28,10 +29,6 @@
                             <select id="jenjang" name="jenjang"
                                 class="bg-transparent border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-300 focus:border-gray-300 block w-1/2 p-2.5 lg:w-full">
                                 <option selected>--Input Jenjang--</option>
-                                <option value="1">S1</option>
-                                <option value="2">S2</option>
-                                <option value="3">S3</option>
-                                <option value="4">PG</option>
                             </select>
                         </div>
                     </div>
@@ -44,10 +41,6 @@
                             <select id="prodi" name="prodi"
                                 class="bg-transparent border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-300 focus:border-gray-300 block w-1/2 p-2.5 lg:w-full">
                                 <option selected>--Prodi--</option>
-                                <option value="1">S1</option>
-                                <option value="2">S2</option>
-                                <option value="3">S3</option>
-                                <option value="4">PG</option>
                             </select>
                         </div>
                     </div>
@@ -72,56 +65,31 @@
                         <thead class="ltr:text-left rtl:text-right">
                             <tr>
                                 <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">Tahun</th>
-                                <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">Daya Tampung
-                                </th>
-                                <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">Pendaftar</th>
-                                <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">Lulus Seleksi
+                                <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">Jumlah
+                                    Mahasiswa Tugas Akhir
                                 </th>
                             </tr>
                         </thead>
 
                         <tbody class="divide-y divide-gray-200">
-                            <tr class="odd:bg-white-bone">
-                                <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">TS-4 (2018)</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">24/05/1995</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">Web Developer</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">$120,000</td>
-                            </tr>
-
-                            <tr class="odd:bg-white-bone">
-                                <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">TS-4 (2018)</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">04/11/1980</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">Web Designer</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">$100,000</td>
-                            </tr>
-
-                            <tr class="odd:bg-white-bone">
-                                <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">TS-4 (2018)</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">24/05/1995</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">Singer</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">$20,000</td>
-                            </tr>
-
-                            <tr class="odd:bg-white-bone">
-                                <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">TS-4 (2018)</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">24/05/1995</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">Singer</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">$20,000</td>
-                            </tr>
-
-                            <tr class="odd:bg-white-bone">
-                                <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">TS-4 (2018)</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">24/05/1995</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">Singer</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">$20,000</td>
-                            </tr>
-
-                            <tr class="odd:bg-white-bone">
-                                <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">TS-4 (2018)</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">24/05/1995</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">Singer</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">$20,000</td>
-                            </tr>
+                            @isset($data)
+                                @php
+                                    $ts = count($data);
+                                @endphp
+                                @foreach ($data as $row)
+                                    <tr class="odd:bg-white-bone">
+                                        <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                                            TS-{{ --$ts . ' (' . $row['tahun'] . ')' }}</td>
+                                        <td class="whitespace-nowrap px-4 py-2 text-gray-700">{{ $row['jml_mhs_tugas_akhir'] }}
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @else
+                                <tr class="odd:bg-white-bone">
+                                    <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">TS-4 (2019)</td>
+                                    <td class="whitespace-nowrap px-4 py-2 text-gray-700">Web Developer</td>
+                                </tr>
+                            @endisset
                         </tbody>
                     </table>
                 </div>
@@ -152,6 +120,8 @@
     </main>
 
     <!-- Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{ asset('prodi.js') }}"></script>
     <script>
         function dropdown1() {
             document.querySelector('#drop-down1').classList.toggle('hidden');
