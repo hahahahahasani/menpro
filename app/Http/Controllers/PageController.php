@@ -11,6 +11,19 @@ class PageController extends Controller
     {
         return view('index');
     }
+
+    public function getJenjang()
+    {
+        $listJenjang = Http::get('https://bolainsight.my.id/api/list-jenjang')->json()['data'];
+        return response()->json($listJenjang);
+    }
+
+    public function getProdi(Request $request)
+    {
+        $listProdi = Http::get('https://bolainsight.my.id/api/list-prodi/' . $request->id_jenjang)->json()['data'];
+        return response()->json($listProdi);
+    }
+
     public function pageMhsCalon()
     {
         return view('mhs.mhsCalon');
@@ -34,6 +47,41 @@ class PageController extends Controller
     public function pageMhsTgsAkhir()
     {
         return view('mhs.mhsTgsAkhir');
+    }
+
+    public function getMhsAktif(Request $request)
+    {
+        $respone = Http::get('https://bolainsight.my.id/api/mhs-aktif?id_prodi=' . $request->prodi);
+        $data = $respone->json()['data'];
+        return view('mhs.mhsAktif', compact('data'));
+    }
+
+    public function getMhsCalon(Request $request)
+    {
+        $respone = Http::get('https://bolainsight.my.id/api/calon-mhs?id_prodi=' . $request->prodi);
+        $data = $respone->json()['data'];
+        return view('mhs.mhsCalon', compact('data'));
+    }
+
+    public function getMhsLulus(Request $request)
+    {
+        $respone = Http::get('https://bolainsight.my.id/api/mhs-lulus?id_prodi=' . $request->prodi);
+        $data = $respone->json()['data'];
+        return view('mhs.mhsLulus', compact('data'));
+    }
+
+    public function getMhsAsing(Request $request)
+    {
+        $respone = Http::get('https://bolainsight.my.id/api/mhs-asing?id_prodi=' . $request->prodi);
+        $data = $respone->json()['data'];
+        return view('mhs.mhsAsing', compact('data'));
+    }
+
+    public function getMhsTgsAkhir(Request $request)
+    {
+        $respone = Http::get('https://bolainsight.my.id/api/mhs-tugas-akhir?id_prodi=' . $request->prodi);
+        $data = $respone->json()['data'];
+        return view('mhs.mhsTgsAkhir', compact('data'));
     }
 
     public function pageDosen()
@@ -108,22 +156,7 @@ class PageController extends Controller
     public function pageAkre()
     {
         $response = Http::get('https://bolainsight.my.id/api/akreditasi');
-        $jenjang = $response->json()['data'];
-        // foreach ($jenjang as $row) {
-        //     // echo $row;
-        //     var_dump($row);
-        //     $try = $row['akreditasi'];
-        // }
-        // dd($row);
-        // var_dump($try);
-        // $akreditasi = $response->json()['data']['akreditasi'];
-
-        $sum = $response->json()['total_data'];
-        $unggul = $response->json()['total_akreditasi_unggul'];
-        $a = $response->json()['total_akreditasi_a'];
-        $b = $response->json()['total_akreditasi_b'];
-        $bs = $response->json()['total_akreditasi_baik_sekali'];
-        $bk = $response->json()['total_akreditasi_baik'];
-        return view('akreditasi', compact('jenjang', 'sum', 'unggul', 'a', 'b', 'bs', 'bk'));
+        $akreditasi = $response->json()['data'];
+        return view('akreditasi', compact('akreditasi'));
     }
 }
