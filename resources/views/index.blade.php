@@ -174,7 +174,7 @@
             </div>
         </section>
 
-        <!-- Chart Diagram -->
+        {{-- <!-- Chart Diagram -->
         <section>
             <div class="container flex mx-auto mt-12 flex-wrap gap-8 justify-center mb-20">
                 <div class="rounded-lg shadow-md w-96 px-6 py-4 bg-white-bone overflow-x-auto">
@@ -202,7 +202,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
     </main>
 
 
