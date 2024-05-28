@@ -27,11 +27,9 @@
                             <label for="asuransi" class="block mb-2 text-sm font-medium text-gray-500"></label>
                             <select id="jenjang" name="jenjang"
                                 class="bg-transparent border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-300 focus:border-gray-300 block w-1/2 p-2.5 lg:w-full">
-                                <option selected>--Input Jenjang--</option>
-                                <option value="1">S1</option>
-                                <option value="2">S2</option>
-                                <option value="3">S3</option>
-                                <option value="4">PG</option>
+                                @foreach ($jenjang as $row)
+                                    <option value="{{ $row['id_jenjang'] }}">{{ $row['nama_jenjang'] }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -152,14 +150,6 @@
     </main>
     <!-- Javascript -->
     <script>
-        function dropdown1() {
-            document.querySelector('#drop-down1').classList.toggle('hidden');
-        }
-
-        function dropdown2() {
-            document.querySelector('#drop-down2').classList.toggle('hidden');
-        }
-
         var trace1 = {
             type: 'bar',
             x: [1, 2, 3, 4, 5],

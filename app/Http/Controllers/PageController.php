@@ -13,7 +13,12 @@ class PageController extends Controller
     }
     public function pageMhsCalon()
     {
-        return view('mhs.mhsCalon');
+        $response = Http::get('https://bolainsight.my.id/api/list-prodi');
+        $res_jenjang = Http::get('https://bolainsight.my.id/api/list-jenjang');
+        
+        $jenjang = $res_jenjang->json()['data'];
+        // dd($jenjang);
+        return view('mhs.mhsCalon', compact('jenjang'));
     }
 
     public function pageMhsAktif()
@@ -109,14 +114,6 @@ class PageController extends Controller
     {
         $response = Http::get('https://bolainsight.my.id/api/akreditasi');
         $jenjang = $response->json()['data'];
-        // foreach ($jenjang as $row) {
-        //     // echo $row;
-        //     var_dump($row);
-        //     $try = $row['akreditasi'];
-        // }
-        // dd($row);
-        // var_dump($try);
-        // $akreditasi = $response->json()['data']['akreditasi'];
 
         $sum = $response->json()['total_data'];
         $unggul = $response->json()['total_akreditasi_unggul'];

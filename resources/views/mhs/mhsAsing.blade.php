@@ -24,7 +24,7 @@
                     <div class="lg:block lg:w-[21%]">
                         <h1 class="text-lg font-semibold text-slate-900 mb-4">Input Jenjang</h1>
                         <div class="mb-4">
-                            <label for="asuransi" class="block mb-2 text-sm font-medium text-gray-500"></label>
+                            <label for="jenjang" class="block mb-2 text-sm font-medium text-gray-500"></label>
                             <select id="jenjang" name="jenjang"
                                 class="bg-transparent border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-300 focus:border-gray-300 block w-1/2 p-2.5 lg:w-full">
                                 <option selected>--Input Jenjang--</option>
@@ -40,7 +40,7 @@
                     <div class="lg:block lg:w-[21%]">
                         <h1 class="text-lg font-semibold text-slate-900 mb-4">Prodi</h1>
                         <div class="mb-4">
-                            <label for="asuransi" class="block mb-2 text-sm font-medium text-gray-500"></label>
+                            <label for="prodi" class="block mb-2 text-sm font-medium text-gray-500"></label>
                             <select id="prodi" name="prodi"
                                 class="bg-transparent border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-300 focus:border-gray-300 block w-1/2 p-2.5 lg:w-full">
                                 <option selected>--Prodi--</option>
