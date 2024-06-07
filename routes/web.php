@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ChartController;
 use App\Http\Controllers\PageController;
+use ArielMejiaDev\LarapexCharts\LarapexChart;
 use Illuminate\Support\Facades\Route;
 
 /*

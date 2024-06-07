@@ -99,21 +99,13 @@
             <!-- Chart Diagram -->
             <section>
                 <div class="container flex mx-auto px-6 mt-12 flex-wrap gap-8 justify-center mb-20">
-                    <div class="rounded-lg shadow-md w-2/5 px-6 py-4 bg-white-bone">
-                        <div id="diagram"></div>
-                        <h2 class="text-lg font-semibold text-slate-800 mb-3">Title</h2>
+                    <div class="rounded-lg shadow-md w-4/5 px-6 py-4 bg-white-bone">
+                        <div id="">{!! $chart->container() !!}</div>
+                        {{-- <h2 class="text-lg font-semibold text-slate-800 mb-3">Title</h2>
                         <div class="flex items-center">
                             <div class="rounded-full bg-purple-500 h-5 w-5 mr-4"></div>
                             <p class="">Jumlah Mahasiswa</p>
-                        </div>
-                    </div>
-                    <div class="rounded-lg shadow-md w-2/5 px-6 py-4 bg-white-bone">
-                        <div id="diagram2"></div>
-                        <h2 class="text-lg font-semibold text-slate-800 mb-3">Title</h2>
-                        <div class="flex items-center">
-                            <div class="rounded-full bg-purple-500 h-5 w-5 mr-4"></div>
-                            <p class="">Jumlah Mahasiswa</p>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </section>
@@ -135,9 +127,14 @@
     </main>
 
     <!-- Javascript -->
+    @isset($chart)
+        <script src="{{ $chart->cdn() }}"></script>
+        {{ $chart->script() }}
+    @endisset
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="{{ asset('prodi.js') }}"></script>
-    <script>
+    {{-- <script>
         function dropdown1() {
             document.querySelector('#drop-down1').classList.toggle('hidden');
         }
@@ -197,5 +194,5 @@
         }
 
         Plotly.newPlot('diagram2', data, layout, config);
-    </script>
+    </script> --}}
 @endsection

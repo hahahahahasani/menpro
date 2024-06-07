@@ -2,6 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Charts\AkreditasiChart;
+use App\Charts\DsnHombeBaseChart;
+use App\Charts\DsnJabatanChart;
+use App\Charts\DsnPendidikanChart;
+use App\Charts\DsnSertifikasiChart;
+use App\Charts\DsnTetapChart;
+use App\Charts\MhsAkhirChart;
+use App\Charts\MhsAktif;
+use App\Charts\MhsAktifChart;
+use App\Charts\MhsAsingChart;
+use App\Charts\MhsCalonChart;
+use App\Charts\MhsLulusChart;
+use App\Charts\TendikChart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -28,7 +41,7 @@ class PageController extends Controller
     {
         $response = Http::get('https://bolainsight.my.id/api/list-prodi');
         $res_jenjang = Http::get('https://bolainsight.my.id/api/list-jenjang');
-        
+
         $jenjang = $res_jenjang->json()['data'];
         // dd($jenjang);
         return view('mhs.mhsCalon', compact('jenjang'));
@@ -54,39 +67,80 @@ class PageController extends Controller
         return view('mhs.mhsTgsAkhir');
     }
 
-    public function getMhsAktif(Request $request)
+    public function getMhsAktif(Request $request, MhsAktifChart $mhsAktifChart)
     {
-        $respone = Http::get('https://bolainsight.my.id/api/mhs-aktif?id_prodi=' . $request->prodi);
-        $data = $respone->json()['data'];
-        return view('mhs.mhsAktif', compact('data'));
+        $response = Http::get('https://bolainsight.my.id/api/mhs-aktif?id_prodi=' . $request->prodi);
+
+        if ($response->successful() && isset($response->json()['data'])) {
+            $data = $response->json()['data'];
+    
+            return view('mhs.mhsAktif', [
+                'data' => $data,
+                'chart1' => $mhsAktifChart->buildchart1($request),
+                'chart2' => $mhsAktifChart->buildChart2($request)
+            ]);
+        } else {
+            return redirect()->back()->with('error', 'Tidak dapat memuat data mahasiswa aktif.');
+        }
     }
 
-    public function getMhsCalon(Request $request)
+    public function getMhsCalon(Request $request, MhsCalonChart $mhsCalonChart)
     {
         $respone = Http::get('https://bolainsight.my.id/api/calon-mhs?id_prodi=' . $request->prodi);
-        $data = $respone->json()['data'];
-        return view('mhs.mhsCalon', compact('data'));
+
+        if ($respone->successful() && isset($respone->json()['data'])) {
+            $data = $respone->json()['data'];
+
+            return view('mhs.mhsCalon', [
+                'data' => $data,
+                'chart1' => $mhsCalonChart->buildchart1($request),
+                'chart2' => $mhsCalonChart->buildChart2($request),
+            ]);
+        }
+        
     }
 
-    public function getMhsLulus(Request $request)
+    public function getMhsLulus(Request $request, MhsLulusChart $mhsLulusChart)
     {
         $respone = Http::get('https://bolainsight.my.id/api/mhs-lulus?id_prodi=' . $request->prodi);
-        $data = $respone->json()['data'];
-        return view('mhs.mhsLulus', compact('data'));
+
+        if ($respone->successful() && isset($respone->json()['data'])) {
+            $data = $respone->json()['data'];
+
+            return view('mhs.mhsLulus', [
+                'data' => $data,
+                'chart1' => $mhsLulusChart->buildchart1($request),
+                'chart2' => $mhsLulusChart->buildchart2($request)
+            ]);
+        }
     }
 
-    public function getMhsAsing(Request $request)
+    public function getMhsAsing(Request $request, MhsAsingChart $mhsAsingChart)
     {
         $respone = Http::get('https://bolainsight.my.id/api/mhs-asing?id_prodi=' . $request->prodi);
-        $data = $respone->json()['data'];
-        return view('mhs.mhsAsing', compact('data'));
+
+        if ($respone->successful() && isset($respone->json()['data'])) {
+            $data = $respone->json()['data'];
+
+            return view('mhs.mhsAsing', [
+                'data' => $data,
+                'chart' => $mhsAsingChart->build($request)
+            ]);
+        }
     }
 
-    public function getMhsTgsAkhir(Request $request)
+    public function getMhsTgsAkhir(Request $request, MhsAkhirChart $mhsAkhirChart)
     {
         $respone = Http::get('https://bolainsight.my.id/api/mhs-tugas-akhir?id_prodi=' . $request->prodi);
-        $data = $respone->json()['data'];
-        return view('mhs.mhsTgsAkhir', compact('data'));
+
+        if ($respone->successful() && isset($respone->json()['data'])) {
+            $data = $respone->json()['data'];
+
+            return view('mhs.mhsTgsAkhir', [
+                'data' => $data,
+                'chart' => $mhsAkhirChart->build($request)
+            ]);
+        }
     }
 
     public function pageDosen()
@@ -96,15 +150,20 @@ class PageController extends Controller
         return view('sdm.dosen', compact('listDosen'));
     }
 
-    public function pageDosenHomebase()
+    public function pageDosenHomebase(DsnHombeBaseChart $dsnHombeBaseChart)
     {
         $response = Http::get('https://bolainsight.my.id/api/dosen-homebase');
         $listDosen = $response->json()['data'];
         $sum = $response->json()['total_data'];
-        return view('sdm.dosen.homebase', compact('listDosen', 'sum'));
+
+        return view('sdm.dosen.homebase', [
+            'listDosen' => $listDosen,
+            'sum' => $sum,
+            'chart' => $dsnHombeBaseChart->build(),
+        ]);
     }
 
-    public function pageDosenJabatanaka()
+    public function pageDosenJabatanaka(DsnJabatanChart $dsnJabatanChart)
     {
         $response = Http::get('https://bolainsight.my.id/api/dosen-jabatan-akademik');
         $listDosen = $response->json()['data'];
@@ -112,10 +171,20 @@ class PageController extends Controller
         $sum1 = $response->json()['total_data_S1'];
         $sum2 = $response->json()['total_data_S2'];
         $sum3 = $response->json()['total_data_S3'];
-        return view('sdm.dosen.jabatanaka', compact('listDosen', 'sumall', 'sum1', 'sum2', 'sum3'));
+
+        return view('sdm.dosen.jabatanaka', [
+            'listDosen' => $listDosen,
+            'sumall' => $sumall,
+            'sum1' => $sum1,
+            'sum2' => $sum2,
+            'sum3' => $sum3,
+            'chart1' => $dsnJabatanChart->buildchart1(),
+            'chart2' => $dsnJabatanChart->buildchart2(),
+            'chart3' => $dsnJabatanChart->buildchart3(),
+        ]);
     }
 
-    public function pageDosenPakhir()
+    public function pageDosenPakhir(DsnPendidikanChart $dsnPendidikanChart)
     {
         $response = Http::get('https://bolainsight.my.id/api/dosen-pendidikan-akhir');
         $listDosen = $response->json()['data'];
@@ -123,19 +192,36 @@ class PageController extends Controller
         $sum1 = $response->json()['total_data_S1'];
         $sum2 = $response->json()['total_data_S2'];
         $sum3 = $response->json()['total_data_S3'];
-        return view('sdm.dosen.pendidikan', compact('listDosen', 'sumall', 'sum1', 'sum2', 'sum3'));
+
+        return view('sdm.dosen.pendidikan', [
+            'listDosen' => $listDosen,
+            'sumall' => $sumall,
+            'sum1' => $sum1,
+            'sum2' => $sum2,
+            'sum3' => $sum3,
+            'chart1' => $dsnPendidikanChart->buildchart1(),
+            'chart2' => $dsnPendidikanChart->buildchart2(),
+            'chart3' => $dsnPendidikanChart->buildchart3(),
+        ]);
     }
 
-    public function pageDosenStatus()
+    public function pageDosenStatus(DsnSertifikasiChart $dsnSertifikasiChart)
     {
         $response = Http::get('https://bolainsight.my.id/api/dosen-status-sertifikasi');
         $listDosen = $response->json()['data'];
         $sum_dosen = $response->json()['total_dosen'];
         $sum_dosen_s = $response->json()['total_dosen_sertifikasi'];
-        return view('sdm.dosen.status', compact('listDosen', 'sum_dosen', 'sum_dosen_s'));
+
+        return view('sdm.dosen.status', [
+            'listDosen' => $listDosen,
+            'sum_dosen' => $sum_dosen,
+            'sum_dosen_s' => $sum_dosen_s,
+            'chart1' => $dsnSertifikasiChart->buildchart1(),
+            'chart2' => $dsnSertifikasiChart->buildchart2()
+        ]);
     }
 
-    public function pageDosenTetap()
+    public function pageDosenTetap(DsnTetapChart $dsnTetapChart)
     {
         $response = Http::get('https://bolainsight.my.id/api/dosen-tidak-tetap');
 
@@ -147,21 +233,39 @@ class PageController extends Controller
         $sum1 = $response->json()['total_data_S1'];
         $sum2 = $response->json()['total_data_S1'];
         $sum3 = $response->json()['total_data_S1'];
-        return view('sdm.dosen.tetap', compact('listDosen', 'akademik', 'sum_dosen', 'sum1', 'sum2', 'sum3'));
+
+        return view('sdm.dosen.tetap', [
+            'listDosen' => $listDosen,
+            'sum_dosen' => $sum_dosen,
+            'akademik' => $akademik,
+            'sum1' => $sum1,
+            'sum2' => $sum2,
+            'sum3' => $sum3,
+            'chart1' => $dsnTetapChart->buildchart1(),
+            'chart2' => $dsnTetapChart->buildchart2(),
+            'chart3' => $dsnTetapChart->buildchart3(),
+            'chart4' => $dsnTetapChart->buildchart4(),
+        ]);
     }
 
-    public function pageTendik()
+    public function pageTendik(TendikChart $tendikChart)
     {
         $response = Http::get('https://bolainsight.my.id/api/tendik');
         $data = $response->json()['data'];
         $sum = $response->json()['total_data'];
-        return view('sdm.tendik', compact('data', 'sum'));
+
+        return view('sdm.tendik', [
+            'data' => $data,
+            'sum' => $sum,
+            'chart' => $tendikChart->build()
+        ]);
     }
 
-    public function pageAkre()
+    public function pageAkre(AkreditasiChart $akreditasiChart)
     {
         $response = Http::get('https://bolainsight.my.id/api/akreditasi');
         $jenjang = $response->json()['data'];
+        $akreditasi = $response->json()['data'];
 
         $sum = $response->json()['total_data'];
         $unggul = $response->json()['total_akreditasi_unggul'];
@@ -169,8 +273,18 @@ class PageController extends Controller
         $b = $response->json()['total_akreditasi_b'];
         $bs = $response->json()['total_akreditasi_baik_sekali'];
         $bk = $response->json()['total_akreditasi_baik'];
-        return view('akreditasi', compact('jenjang', 'sum', 'unggul', 'a', 'b', 'bs', 'bk'));
-        $akreditasi = $response->json()['data'];
-        return view('akreditasi', compact('akreditasi'));
+
+        return view('akreditasi', [
+            'jenjang' => $jenjang,
+            'sum' => $sum,
+            'unggul' => $unggul,
+            'a' => $a,
+            'b' => $b,
+            'bs' => $bs,
+            'bk' => $bk,
+            'akreditasi' => $akreditasi,
+            'chart' => $akreditasiChart->build(),
+        ]);
+        // return view('akreditasi', compact('akreditasi', ));
     }
 }

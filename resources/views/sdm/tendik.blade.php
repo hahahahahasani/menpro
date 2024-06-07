@@ -19,9 +19,9 @@
         <!-- Chart Diagram -->
         <section>
             <div class="container flex mx-auto px-6 mt-12 flex-wrap gap-8 justify-center mb-20">
-                <div class="rounded-lg shadow-md w-2/5 h-[620px] px-6 py-4 bg-white-bone overflow-auto">
+                <div class="rounded-lg shadow-md w-2/5 px-6 py-4 bg-white-bone overflow-auto">
                     <div class="overflow-auto w-full">
-                        <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm text-center">
+                        <table class="min-w-full divide-y-2 divide-gray-200 text-sm text-center">
                             <thead class="ltr:text-left rtl:text-right">
                                 <tr>
                                     <th class="whitespace-nowrap px-4 py-2 font-semibold text-base text-gray-900">
@@ -56,9 +56,9 @@
                         </table>
                     </div>
                 </div>
-                <div class="rounded-lg shadow-md w-2/5 h-[620px] px-6 py-4 bg-white-bone overflow-auto">
-                    <div id="diagram2"></div>
-                    <h2 class="text-lg font-semibold text-slate-800 my-3">Title</h2>
+                <div class="rounded-lg shadow-md w-2/5 px-6 py-4 bg-white-bone overflow-auto">
+                    <div id="">{!! $chart->container() !!}</div>
+                    {{-- <h2 class="text-lg font-semibold text-slate-800 my-3">Title</h2>
                     <div class="flex items-center mb-1">
                         <div class="rounded-full bg-green-500 h-5 w-5 mr-4"></div>
                         <p class="">Jumlah Dosen</p>
@@ -70,14 +70,16 @@
                     <div class="flex items-center mb-1">
                         <div class="rounded-full bg-blue-500 h-5 w-5 mr-4"></div>
                         <p class="">Jumlah Dosen</p>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Javascript -->
-    <script>
+    <script src="{{ $chart->cdn() }}"></script>
+    {{ $chart->script() }}
+    {{-- <script>
         function dropdown1() {
             document.querySelector('#drop-down1').classList.toggle('hidden');
         }
@@ -98,5 +100,5 @@
         }
 
         Plotly.newPlot('diagram2', data, config);
-    </script>
+    </script> --}}
 @endsection

@@ -116,8 +116,8 @@
         <section>
             <div class="container flex mx-auto px-6 mt-12 flex-wrap gap-8 justify-center mb-20">
                 <div class="rounded-lg shadow-md w-2/5 px-6 py-4 bg-white-bone overflow-y-auto">
-                    <div id="diagram"></div>
-                    <h2 class="text-lg font-semibold text-slate-800 my-3">Title</h2>
+                    <div id="">{!! $chart1->container() !!}</div>
+                    {{-- <h2 class="text-lg font-semibold text-slate-800 my-3">Title</h2>
                     <div class="flex items-center mb-1">
                         <div class="rounded-full bg-green-500 h-5 w-5 mr-4"></div>
                         <p class="">Jumlah Dosen</p>
@@ -129,11 +129,11 @@
                     <div class="flex items-center mb-1">
                         <div class="rounded-full bg-blue-500 h-5 w-5 mr-4"></div>
                         <p class="">Jumlah Dosen</p>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="rounded-lg shadow-md w-2/5 px-6 py-4 bg-white-bone overflow-y-auto">
-                    <div id="diagram2"></div>
-                    <h2 class="text-lg font-semibold text-slate-800 my-3">Title</h2>
+                    <div id="">{!! $chart2->container() !!}</div>
+                    {{-- <h2 class="text-lg font-semibold text-slate-800 my-3">Title</h2>
                     <div class="flex items-center mb-1">
                         <div class="rounded-full bg-green-500 h-5 w-5 mr-4"></div>
                         <p class="">Jumlah Dosen</p>
@@ -145,13 +145,57 @@
                     <div class="flex items-center mb-1">
                         <div class="rounded-full bg-blue-500 h-5 w-5 mr-4"></div>
                         <p class="">Jumlah Dosen</p>
+                    </div> --}}
+                </div>
+                <div class="rounded-lg shadow-md w-2/5 px-6 py-4 bg-white-bone overflow-y-auto">
+                    <div id="">{!! $chart3->container() !!}</div>
+                    {{-- <h2 class="text-lg font-semibold text-slate-800 my-3">Title</h2>
+                    <div class="flex items-center mb-1">
+                        <div class="rounded-full bg-green-500 h-5 w-5 mr-4"></div>
+                        <p class="">Jumlah Dosen</p>
                     </div>
+                    <div class="flex items-center mb-1">
+                        <div class="rounded-full bg-yellow-500 h-5 w-5 mr-4"></div>
+                        <p class="">Jumlah Dosen</p>
+                    </div>
+                    <div class="flex items-center mb-1">
+                        <div class="rounded-full bg-blue-500 h-5 w-5 mr-4"></div>
+                        <p class="">Jumlah Dosen</p>
+                    </div> --}}
+                </div>
+                <div class="rounded-lg shadow-md w-2/5 px-6 py-4 bg-white-bone overflow-y-auto">
+                    <div id="">{!! $chart4->container() !!}</div>
+                    {{-- <h2 class="text-lg font-semibold text-slate-800 my-3">Title</h2>
+                    <div class="flex items-center mb-1">
+                        <div class="rounded-full bg-green-500 h-5 w-5 mr-4"></div>
+                        <p class="">Jumlah Dosen</p>
+                    </div>
+                    <div class="flex items-center mb-1">
+                        <div class="rounded-full bg-yellow-500 h-5 w-5 mr-4"></div>
+                        <p class="">Jumlah Dosen</p>
+                    </div>
+                    <div class="flex items-center mb-1">
+                        <div class="rounded-full bg-blue-500 h-5 w-5 mr-4"></div>
+                        <p class="">Jumlah Dosen</p>
+                    </div> --}}
                 </div>
             </div>
         </section>
     </main>
 
-    <script>
+    {{-- Javascript --}}
+    <script src="{{ $chart1->cdn() }}"></script>
+    {{ $chart1->script() }}
+
+    <script src="{{ $chart2->cdn() }}"></script>
+    {{ $chart2->script() }}
+
+    <script src="{{ $chart3->cdn() }}"></script>
+    {{ $chart3->script() }}
+
+    <script src="{{ $chart4->cdn() }}"></script>
+    {{ $chart4->script() }}
+    {{-- <script>
         var trace1 = {
             values: [19, 26, 55],
             type: 'pie'
@@ -177,5 +221,5 @@
         }
 
         Plotly.newPlot('diagram2', data, config);
-    </script>
+    </script> --}}
 @endsection
