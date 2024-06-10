@@ -130,6 +130,26 @@
                         </div> --}}
                         </div>
                     @endisset
+                    @isset($chart3)
+                        <div class="rounded-lg shadow-md w-2/5 px-6 py-4 bg-white-bone">
+                            <div id="">{!! $chart3->container() !!}</div>
+                            {{-- <h2 class="text-lg font-semibold text-slate-800 mb-3">Title</h2>
+                        <div class="flex items-center">
+                            <div class="rounded-full bg-purple-500 h-5 w-5 mr-4"></div>
+                            <p class="">Jumlah Mahasiswa</p>
+                        </div> --}}
+                        </div>
+                    @endisset
+                    @isset($chart4)
+                        <div class="rounded-lg shadow-md w-2/5 px-6 py-4 bg-white-bone">
+                            <div id="">{!! $chart4->container() !!}</div>
+                            {{-- <h2 class="text-lg font-semibold text-slate-800 mb-3">Title</h2>
+                        <div class="flex items-center">
+                            <div class="rounded-full bg-purple-500 h-5 w-5 mr-4"></div>
+                            <p class="">Jumlah Mahasiswa</p>
+                        </div> --}}
+                        </div>
+                    @endisset
                 </div>
             </section>
         @else
@@ -157,6 +177,16 @@
     @isset($chart2)
         <script src="{{ $chart2->cdn() }}"></script>
         {{ $chart2->script() }}
+    @endisset
+
+    @isset($chart3)
+        <script src="{{ $chart3->cdn() }}"></script>
+        {{ $chart3->script() }}
+    @endisset
+
+    @isset($chart4)
+        <script src="{{ $chart4->cdn() }}"></script>
+        {{ $chart4->script() }}
     @endisset
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

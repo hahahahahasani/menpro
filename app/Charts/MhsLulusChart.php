@@ -34,7 +34,7 @@ class MhsLulusChart
 
         return $this->chart1->barChart()
             ->setTitle('Jumlah Lulusan')
-            ->setSubtitle('Season 2020/2021')
+            ->setSubtitle('Season 2020/2023')
             ->addData('Jumlah Lulusan', $lulusan)
             ->setXAxis($tahun);
     }
@@ -55,7 +55,7 @@ class MhsLulusChart
 
         return $this->chart2->barChart()
             ->setTitle('Rata-Rata Masa Studi & IPK')
-            ->setSubtitle('Season 2020/2021')
+            ->setSubtitle('Season 2020/2023')
             ->addData('Rata-Rata IPK', $rataipk)
             ->addData('Rata-Rata Studi', $ratastudi)
             ->setXAxis($tahun);

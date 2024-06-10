@@ -31,7 +31,7 @@ class TendikChart
         }
 
         return $this->chart->pieChart()
-            ->setTitle('Tenaga Didik UINSA')
+            ->setTitle('Tenaga Didik UINSATU')
             ->setSubtitle('Season 2021.')
             ->setDataset($jml)
             ->setLabels($jabatan);

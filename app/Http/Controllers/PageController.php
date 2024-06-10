@@ -95,6 +95,9 @@ class PageController extends Controller
                 'data' => $data,
                 'chart1' => $mhsCalonChart->buildchart1($request),
                 'chart2' => $mhsCalonChart->buildChart2($request),
+                'chart3' => $mhsCalonChart->buildChart3($request),
+                'chart3' => $mhsCalonChart->buildChart3($request),
+                'chart4' => $mhsCalonChart->buildChart4($request),
             ]);
         }
         

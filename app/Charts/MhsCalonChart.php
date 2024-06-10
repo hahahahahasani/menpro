@@ -77,4 +77,64 @@ class MhsCalonChart
             ->addData('2021', $data2021)
             ->setXAxis($labels);
     }
+
+    public function buildChart3(Request $request): BarChart
+    {
+        $response = Http::get('https://bolainsight.my.id/api/calon-mhs?id_prodi=' . $request->prodi);
+
+        $dayatampung = [];
+        $daftar = [];
+        $seleksi = [];
+
+        if ($response->successful() && isset($response->json()['data'])) {
+            $api = $response->json()['data'];
+
+            foreach ($api as $items) {
+                if ($items['tahun'] == '2022') {
+                    $dayatampung[] = (int) $items['daya_tampung'];
+                    $daftar[] = (int) $items['pendaftar'];
+                    $seleksi[] = (int) $items['lulus_seleksi'];
+                }
+            }
+        }
+
+        $labels = ['Daya Tampung', 'Pendaftar', 'Lulus Seleksi'];
+        $data2022 = [$dayatampung[0], $daftar[0], $seleksi[0]];
+
+        return $this->chart2->barChart()
+            ->setTitle('Calon Mahasiswa 2022')
+            ->setSubtitle('Season 2022')
+            ->addData('2022', $data2022)
+            ->setXAxis($labels);
+    }
+
+    public function buildChart4(Request $request): BarChart
+    {
+        $response = Http::get('https://bolainsight.my.id/api/calon-mhs?id_prodi=' . $request->prodi);
+
+        $dayatampung = [];
+        $daftar = [];
+        $seleksi = [];
+
+        if ($response->successful() && isset($response->json()['data'])) {
+            $api = $response->json()['data'];
+
+            foreach ($api as $items) {
+                if ($items['tahun'] == '2023') {
+                    $dayatampung[] = (int) $items['daya_tampung'];
+                    $daftar[] = (int) $items['pendaftar'];
+                    $seleksi[] = (int) $items['lulus_seleksi'];
+                }
+            }
+        }
+
+        $labels = ['Daya Tampung', 'Pendaftar', 'Lulus Seleksi'];
+        $data2023 = [$dayatampung[0], $daftar[0], $seleksi[0]];
+
+        return $this->chart2->barChart()
+            ->setTitle('Calon Mahasiswa 2023')
+            ->setSubtitle('Season 2023')
+            ->addData('2023', $data2023)
+            ->setXAxis($labels);
+    }
 }
